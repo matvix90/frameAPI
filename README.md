@@ -1,5 +1,5 @@
 # FrameAPI
-Fast and Light Python Web Framework
+Fast and Light Python Web Framework.
 
 ## Installation
 Create and activate virtual env and then install the framework:
