@@ -1,4 +1,4 @@
-# frameAPI
+# FrameAPI
 Fast and Light Python Web Framework
 
 ## Installation
