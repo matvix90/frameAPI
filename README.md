@@ -12,7 +12,7 @@ pip install frameapi
 - Create a file `app.py`:
 
 ``` py
-from frameAPI import FrameAPI
+from frameapi import FrameAPI
 
 app = FrameAPI()
 
