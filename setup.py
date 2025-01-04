@@ -2,13 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name="frame-API",
-    version="0.1.2",
+    version="0.1.3",
     description="A lightweight Python web framework.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="matvix",
     author_email="",
-    url="https://github.com/matvix90/frameAPI.git",
+    url="https://github.com/matvix90/frameapi.git",
     license="MIT",
     packages=find_packages(),
     install_requires=[
@@ -21,5 +21,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.10",
 )

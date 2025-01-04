@@ -2,8 +2,8 @@ import inspect
 import types
 from typing import Any
 from parse import parse
-from request import Request
-from response import Response
+from frameapi.request import Request
+from frameapi.response import Response
 
 SUPPORTED_METHODS = {'GET', 'POST', 'DELETE'}
 
@@ -119,3 +119,11 @@ class FrameAPI:
                 raise ValueError("Route decorator can only be used with classes")
         
         return wrapper
+    
+    def welcome(self, template_name="templates/default.html"):
+        """
+        Register a welcome route to serve the default.html file.
+        """
+        @self.get("/")
+        def default_handler(request, response):
+            response.render(template_name)
