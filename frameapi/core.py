@@ -120,10 +120,10 @@ class FrameAPI:
         
         return wrapper
     
-    def welcome(self, template_name="templates/default.html"):
+    def welcome(self, default_template="frameapi/templates/default.html"):
         """
         Register a welcome route to serve the default.html file.
         """
         @self.get("/")
         def default_handler(request, response):
-            response.render(template_name)
+            response.render(default_template)
