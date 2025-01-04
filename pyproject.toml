@@ -18,9 +18,8 @@ description = "A lightweight Python web framework."
 readme = "README.md"
 license = {text = "MIT License"}
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 1 - Planning",
     "Environment :: Web Environment",
-    "Framework :: FrameAPI",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
