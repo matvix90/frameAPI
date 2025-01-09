@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "frame-API"
-version = "0.1.5"
+version = "0.1.6"
 requires-python = ">= 3.10"
 dependencies = [
     "gunicorn==23.0.0",
