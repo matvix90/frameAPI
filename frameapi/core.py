@@ -2,6 +2,7 @@ import inspect
 import types
 from typing import Any
 from parse import parse
+from importlib.resources import files
 from frameapi.request import Request
 from frameapi.response import Response
 
@@ -119,11 +120,28 @@ class FrameAPI:
                 raise ValueError("Route decorator can only be used with classes")
         
         return wrapper
+
+
+    def get_template_content(self, template_name="templates/default.html"):
+        """
+        Locate and read the content of a template file within the package.
+        """
+        try:
+            template_path = files("frameapi").joinpath(template_name)
+            return template_path
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Template '{template_name}' not found in the package.")
+
     
-    def welcome(self, default_template="frameapi/templates/default.html"):
+    def welcome(self):
         """
         Register a welcome route to serve the default.html file.
         """
         @self.get("/")
         def default_handler(request, response):
-            response.render(default_template)
+            try:
+                # Render the template with a context
+                default_template=self.get_template_content()
+                response.render(default_template)
+            except Exception as e:
+                response.text = f"Error: {str(e)}"
